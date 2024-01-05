@@ -4,7 +4,7 @@
 
     <groupId>com.graphql-java-kickstart</groupId>
     <artifactId>graphql-java-tools</artifactId>
-    <version>13.1.2-SNAPSHOT</version>
+    <version>13.1.2-SAMS-SNAPSHOT</version>
     <packaging>jar</packaging>
 
     <name>GraphQL Java Tools</name>
@@ -13,11 +13,11 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <java.version>11</java.version>
+        <java.version>1.8</java.version>
         <kotlin.version>1.8.21</kotlin.version>
         <kotlin-coroutines.version>1.7.3</kotlin-coroutines.version>
         <jackson.version>2.15.3</jackson.version>
-        <graphql-java.version>21.3</graphql-java.version>
+        <graphql-java.version>20.7</graphql-java.version>
         <reactive-streams.version>1.0.4</reactive-streams.version>
 
         <maven.compiler.source>${java.version}</maven.compiler.source>
@@ -146,6 +146,14 @@
             <groupId>org.jetbrains.kotlin</groupId>
             <artifactId>kotlin-reflect</artifactId>
         </dependency>
+        <dependency>
+            <!--
+            TODO not sure what's right to use for kotlin coroutines on Java 8.
+            -->
+            <groupId>org.jetbrains.kotlinx</groupId>
+            <artifactId>kotlinx-coroutines-jdk8</artifactId>
+        </dependency>
+
         <dependency>
             <!--
             Depending on kotlinx-coroutines-core causes an ambiguous module reference warning.
@@ -286,8 +294,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.11.0</version>
                 <configuration>
-                    <source>11</source>
-                    <target>11</target>
+                    <source>8</source>
+                    <target>8</target>
                 </configuration>
             </plugin>
 

@@ -14,6 +14,8 @@ import java.util.*
  */
 class InaccessibleFieldResolverTest {
 
+    /*
+     TODO are any of these valid for Java 8?  Should have seen if these existed in v13.0.x work.
     @Test
     fun `private field from closed module is not accessible`() {
         val schema: GraphQLSchema = SchemaParser.newParser()
@@ -50,6 +52,7 @@ class InaccessibleFieldResolverTest {
         val exceptionWhileDataFetching = result.errors[0] as ExceptionWhileDataFetching
         assert(exceptionWhileDataFetching.exception is IllegalAccessException)
     }
+    */
 
     @Test
     fun `private field from closed module is accessible through resolver`() {
